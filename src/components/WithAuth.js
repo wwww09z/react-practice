@@ -1,10 +1,10 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { redirect } from 'react-router-dom';
 
 const withAuthComponent = (WrappedComponent) => {
   if (checkAuth()) return (props) => <WrappedComponent {...props} />;
   return () => <div>Can you please login first?</div>;
-  return <Redirect to="/login" />;
+  return redirect("/login");
 };
 
 const checkAuth = () => {
