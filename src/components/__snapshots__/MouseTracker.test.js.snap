@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MouseTracker check snapshot 1`] = `
+<div
+  onMouseMove={[Function]}
+  style={
+    Object {
+      "height": "100vh",
+    }
+  }
+>
+  <div>
+    Mouse position is 100, 200
+  </div>
+</div>
+`;
