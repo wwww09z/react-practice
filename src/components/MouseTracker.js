@@ -1,19 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { updatePosition } from '../redux/slices/mousePositionSlice';
 
 const MouseTracker = (props) => {
   const dispatch = useDispatch();
-  const updatePosition = ({ x, y }) => {
-    return {
-      type: 'UPDATE',
-      value: { x, y }
-    }
-  };
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const handleMouseMove = (event) => {
     dispatch(updatePosition({ x: event.clientX, y: event.clientY }));
   };
-  const position = useSelector(state => state.mousePositionReducer.position)
+  const position = useSelector(state => state.mousePosition)
 
 
   return (
